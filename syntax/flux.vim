@@ -18,7 +18,7 @@ syn match   fluxKeyworld        "options"
 
 syn keyword   fluxConditional        if else switch select
 
-syn keyword     fluxRepeat            for range
+syn keyword     fluxRepeat            for
 
 syn match   fluxImport        "import"
 
