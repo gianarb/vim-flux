@@ -13,7 +13,6 @@ function! s:query() range
       let l:auth_token = g:influxdbAuthToken
   endif
 
-  echo l:auth_token
   if len(l:auth_token) == 0
       echoerr "Auth token needs to be set or via ~/.influxdbv2/credentials or overriding g:influxdbAuthToken."
       return
@@ -30,16 +29,13 @@ function! s:query() range
   let l:ret = webapi#http#post(query_url, selectedQuery, headers)
 
   if !bufexists(s:buf_nr)
-    echo 'not exist'
     botright new
     let s:buf_nr = bufnr('%')
     exec 'f ' . g:buf_request_query_name
   elseif bufwinnr(s:buf_nr) == -1
-    echo '-1'
     botright new
     execute s:buf_nr . 'buffer'
   elseif bufwinnr(s:buf_nr) != bufwinnr('%')
-    echo '%'
     execute bufwinnr(s:buf_nr).'wincmd w'
   endif
 
