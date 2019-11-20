@@ -5,6 +5,7 @@ What it (will) provide:
 - [x] Syntax highlight
 - [x] Query an InfluxDB OSS/Cloud with a friendly output.
 - [x] With a proper language server client you can enjoy [flux-lsp](https://github.com/influxdata/flux-lsp) for autocompletition and inspection.
+- [x] [NerdCommenter](https://github.com/scrooloose/nerdcommenter) integration to make commenting easy
 - [ ] Converstion to AST for debugging purpose
 - [ ] I don't know... tell me.
 
