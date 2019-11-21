@@ -5,7 +5,8 @@ let s:buf_nr = -1
 let g:influxdbHostPort = "http://localhost:9999"
 let g:influxdbAuthToken = ""
 
-function! s:query() range
+function! s:query(org_name) range
+  echo a:org_name
   let l:credentialsfile = expand('~/.influxdbv2/credentials')
   if len(g:influxdbAuthToken) == 0
       let l:auth_token = join(readfile(credentialsfile),"")
@@ -24,7 +25,7 @@ function! s:query() range
     let l:selectedQuery = l:selectedQuery."\x0a".getline(lineno)
   endfor
 
-  let l:query_url = g:influxdbHostPort."/api/v2/query?org=gianarb"
+  let l:query_url = g:influxdbHostPort."/api/v2/query?org=".a:org_name
   let l:headers = {"Authorization": "Token ".auth_token, "Content-Type": "application/vnd.flux"}
   let l:ret = webapi#http#post(query_url, selectedQuery, headers)
 
@@ -51,4 +52,4 @@ function! s:query() range
   setlocal nomodifiable
 endfunction
 
-command -range FluxQueryInfluxDB <line1>,<line2>call s:query()
+command -nargs=1 -range FluxQueryInfluxDB <line1>,<line2>call s:query(<q-args>)

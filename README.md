@@ -46,7 +46,7 @@ buffer.
 
 How does it work?! Open a `.flux` file with your queries/query. Enter `visual`
 mode and select the query or the part you would like to sent to `InfluxDB` and
-type `:FluxQueryInfluxDB`. Behind the scene the select string will be sent to
+type `:FluxQueryInfluxDB orgName`. Behind the scene the select string will be sent to
 `http://localhost:9999/api/v2/query` and the request will be printed as readonly
 buffer in a new window.
 
