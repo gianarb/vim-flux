@@ -61,3 +61,9 @@ let g:influxdbHostPort = "http://influxcloud:9999"
 As you probably know InfluxDB 2 has authentication enable by default. vim-flux
 by default reads it from `~/.influxdbv2/credentials` in order to override this
 behavior you can set the variable `g:influxdbAuthToken` with your token.
+
+You can run the entire script in your current window with the command:
+
+```
+:%FluxQueryInfluxDB orgName
+```
