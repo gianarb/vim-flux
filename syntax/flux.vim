@@ -16,7 +16,7 @@ syn region      fluxComment           start="//" end="$"  contains=@fluxCommentG
 syn match   fluxKeyworld        "fn"
 syn match   fluxKeyworld        "options"
 
-syn keyword   fluxConditional        if else switch select
+syn keyword   fluxConditional        if then else
 
 syn keyword     fluxRepeat            for
 
