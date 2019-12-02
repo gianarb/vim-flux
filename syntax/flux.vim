@@ -21,6 +21,7 @@ syn keyword   fluxConditional        if else switch select
 syn keyword     fluxRepeat            for
 
 syn match   fluxImport        "import"
+syn match   fluxBuiltin       "builtin"
 
 syn region fluxString oneline start=/"/ end=/"/
 
@@ -46,6 +47,7 @@ hi def link fluxFloat    Float
 hi def link fluxOperator  Operator
 hi def link fluxComment  Comment
 hi def link fluxImport Include
+hi def link fluxBuiltin Include
 hi def link fluxTodo Todo
 hi def link fluxConditional       Conditional
 hi def link fluxRepeat       Repeat
