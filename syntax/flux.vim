@@ -13,8 +13,13 @@ syn keyword     fluxTodo              contained TODO FIXME XXX BUG
 syn cluster     fluxCommentGroup      contains=fluxTodo
 syn region      fluxComment           start="//" end="$"  contains=@fluxCommentGroup,@Spell
 
-syn match   fluxKeyworld        "fn"
-syn match   fluxKeyworld        "options"
+syn match   fluxKeyword        "builtin"
+syn match   fluxKeyword        "empty"
+syn match   fluxKeyword        "return"
+syn match   fluxKeyword        "package"
+syn match   fluxKeyword        "option"
+syn match   fluxKeyword        "test"
+
 
 syn keyword   fluxConditional        if else switch select
 
@@ -31,16 +36,31 @@ syn match       fluxFloat             /\<\d\+\.\d+\>/
 
 syn match   fluxOperator        "="
 syn match   fluxOperator        "=>"
+syn match   fluxOperator        /</
+syn match   fluxOperator        />/
+syn match   fluxOperator        />=/
+syn match   fluxOperator        /<=/
+syn match   fluxOperator        /!=/
+syn match   fluxOperator        /!=/
+syn match   fluxOperator        /==/
+syn match   fluxOperator        /!\~/
+syn match   fluxOperator        /=\~/
+syn match   fluxOperator        /+/
+syn match   fluxOperator        /-/
+syn match   fluxOperator        /*/
+syn match   fluxOperator        /%/
+syn match   fluxOperator        /\^/
+syn match   fluxOperator        /\./
 
 syn match       fluxPipe             /|>/
 
 syn match       fluxFunction          /\w\+(/he=e-1
 
-syn keyword fluxOperator		as and bitor or xor compl bitand and_eq or_eq xor_eq not not_eq
+syn keyword fluxOperator		and or not in exists
 
 hi def link fluxBoolean Boolean
 hi def link fluxString String
-hi def link fluxKeyworld  Keyword
+hi def link fluxKeyword  Keyword
 hi def link fluxDecimalInt    Constant
 hi def link fluxFloat    Float
 hi def link fluxOperator  Operator
